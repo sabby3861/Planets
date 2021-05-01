@@ -21,6 +21,7 @@
 		64991F1D26389994009A4DA4 /* PlanetsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F1C26389994009A4DA4 /* PlanetsRouter.swift */; };
 		64991F22263899A1009A4DA4 /* PlanetsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */; };
 		64991F27263899AA009A4DA4 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F26263899AA009A4DA4 /* Planets.swift */; };
+		64991F2F26389B4B009A4DA4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F2E26389B4B009A4DA4 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		64991F1C26389994009A4DA4 /* PlanetsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRouter.swift; sourceTree = "<group>"; };
 		64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsProtocols.swift; sourceTree = "<group>"; };
 		64991F26263899AA009A4DA4 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		64991F2E26389B4B009A4DA4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				64991F1C26389994009A4DA4 /* PlanetsRouter.swift */,
 				64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */,
 				64991F26263899AA009A4DA4 /* Planets.swift */,
+				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
 				64991EDD26389571009A4DA4 /* Main.storyboard */,
 				64991EE326389572009A4DA4 /* Assets.xcassets */,
 				64991EE526389572009A4DA4 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			files = (
 				64991F27263899AA009A4DA4 /* Planets.swift in Sources */,
 				64991ED826389571009A4DA4 /* AppDelegate.swift in Sources */,
+				64991F2F26389B4B009A4DA4 /* APIManager.swift in Sources */,
 				64991EDA26389571009A4DA4 /* SceneDelegate.swift in Sources */,
 				64991EE226389571009A4DA4 /* JPPlanets.xcdatamodeld in Sources */,
 				64991F1326389970009A4DA4 /* PlanetsPresenter.swift in Sources */,
