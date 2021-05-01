@@ -115,12 +115,7 @@
 			children = (
 				64991ED726389571009A4DA4 /* AppDelegate.swift */,
 				64991ED926389571009A4DA4 /* SceneDelegate.swift */,
-				64991F0D2638994A009A4DA4 /* PlanetsViewController.swift */,
-				64991F1226389970009A4DA4 /* PlanetsPresenter.swift */,
-				64991F1726389986009A4DA4 /* PlanetsInteractor.swift */,
-				64991F1C26389994009A4DA4 /* PlanetsRouter.swift */,
-				64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */,
-				64991F26263899AA009A4DA4 /* Planets.swift */,
+				64991F3A263DC53E009A4DA4 /* Planets (VIPER) */,
 				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
 				64991EDD26389571009A4DA4 /* Main.storyboard */,
 				64991EE326389572009A4DA4 /* Assets.xcassets */,
@@ -147,6 +142,19 @@
 				64991EFE26389572009A4DA4 /* Info.plist */,
 			);
 			path = JPPlanetsUITests;
+			sourceTree = "<group>";
+		};
+		64991F3A263DC53E009A4DA4 /* Planets (VIPER) */ = {
+			isa = PBXGroup;
+			children = (
+				64991F0D2638994A009A4DA4 /* PlanetsViewController.swift */,
+				64991F1226389970009A4DA4 /* PlanetsPresenter.swift */,
+				64991F1726389986009A4DA4 /* PlanetsInteractor.swift */,
+				64991F1C26389994009A4DA4 /* PlanetsRouter.swift */,
+				64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */,
+				64991F26263899AA009A4DA4 /* Planets.swift */,
+			);
+			path = "Planets (VIPER)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
