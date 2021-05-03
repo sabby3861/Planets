@@ -48,5 +48,5 @@ protocol PlanetsRouterProtocol: class
 
 
 protocol APIManagerProtocol {
-    func getPlanetsInfo(completion: @escaping (Result<[Planets]>) -> Void)
+    func getPlanetsInfo(payload: JPHTTPPayloadProtocol,completion: @escaping (Result<[Planets]>) -> Void)
 }

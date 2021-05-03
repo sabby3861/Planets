@@ -23,6 +23,8 @@
 		64991F27263899AA009A4DA4 /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F26263899AA009A4DA4 /* Planets.swift */; };
 		64991F2F26389B4B009A4DA4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F2E26389B4B009A4DA4 /* APIManager.swift */; };
 		64991F42263DC803009A4DA4 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F41263DC803009A4DA4 /* NetworkReachabilityManager.swift */; };
+		64991F47263DCB86009A4DA4 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */; };
+		64991F4C264021DE009A4DA4 /* JPPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F4B264021DE009A4DA4 /* JPPayload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		64991F26263899AA009A4DA4 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		64991F2E26389B4B009A4DA4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		64991F41263DC803009A4DA4 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		64991F4B264021DE009A4DA4 /* JPPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPPayload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +123,9 @@
 				64991ED926389571009A4DA4 /* SceneDelegate.swift */,
 				64991F3A263DC53E009A4DA4 /* Planets (VIPER) */,
 				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
+				64991F4B264021DE009A4DA4 /* JPPayload.swift */,
 				64991F41263DC803009A4DA4 /* NetworkReachabilityManager.swift */,
+				64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */,
 				64991EDD26389571009A4DA4 /* Main.storyboard */,
 				64991EE326389572009A4DA4 /* Assets.xcassets */,
 				64991EE526389572009A4DA4 /* LaunchScreen.storyboard */,
@@ -290,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64991F47263DCB86009A4DA4 /* URLSessionProtocol.swift in Sources */,
 				64991F27263899AA009A4DA4 /* Planets.swift in Sources */,
 				64991ED826389571009A4DA4 /* AppDelegate.swift in Sources */,
 				64991F2F26389B4B009A4DA4 /* APIManager.swift in Sources */,
@@ -298,6 +305,7 @@
 				64991F1326389970009A4DA4 /* PlanetsPresenter.swift in Sources */,
 				64991F0E2638994A009A4DA4 /* PlanetsViewController.swift in Sources */,
 				64991F42263DC803009A4DA4 /* NetworkReachabilityManager.swift in Sources */,
+				64991F4C264021DE009A4DA4 /* JPPayload.swift in Sources */,
 				64991F22263899A1009A4DA4 /* PlanetsProtocols.swift in Sources */,
 				64991F1D26389994009A4DA4 /* PlanetsRouter.swift in Sources */,
 				64991F1826389986009A4DA4 /* PlanetsInteractor.swift in Sources */,
