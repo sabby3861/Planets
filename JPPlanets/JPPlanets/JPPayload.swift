@@ -62,5 +62,5 @@ enum JPHTTPPayloadType{
 }
 
 enum JPHTTPUrl: String {
-    case planetsUrl = "https://swapi.dev/api/planets"
+    case planetsUrl = "https://swapi.dev/api/planets/"
 }

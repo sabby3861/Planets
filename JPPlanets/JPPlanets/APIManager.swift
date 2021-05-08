@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import Foundation
+import UIKit
+import CoreData
 
 /**
  All query output are wrapped into this Enum
@@ -111,15 +112,45 @@ class APIManager {
             urlRequest.httpMethod = payload.type?.httpMethod()
             task = urlSession.dataTask(with: urlRequest) { data, response, error in
                 guard let data = data else {
-                    completion(Result.error(error))
+                    DispatchQueue.main.async {
+                        completion(Result.error(error))
+                    }
                     return
                 }
                 do {
-                    let decoder = JSONDecoder()
-                    let contacts = try decoder.decode(T.self, from: data)
-                    completion(Result.success(contacts))
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            // try to read out a string array
+                                print(json)
+                            
+                        }
+                    
+                    guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+                      fatalError("Failed to retrieve managed object context")
+                    }
+                    // Parse JSON data
+                    var managedObjectContext: NSManagedObjectContext?
+                        let coreData = CoreDataStack()
+                        managedObjectContext = coreData.persistentContainer.viewContext
+                    DispatchQueue.global(qos: .background).async {
+                        managedObjectContext?.perform {
+                            let decoder = JSONDecoder()
+                            decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext!
+                            
+                            do{
+                             let contacts = try decoder.decode(T.self, from: data)
+                                completion(Result.success(contacts))
+                            }
+                            
+                            catch let error {
+                                    completion(Result.error(error))
+                            }
+                        }
+                    }
+                    
                 } catch let error {
-                    completion(Result.error(error))
+                    DispatchQueue.main.async {
+                        completion(Result.error(error))
+                    }
                 }
             }
             task?.resume()
@@ -137,7 +168,7 @@ extension APIManager: APIManagerProtocol {
      - Parameter id:  Payload protocol, containing payload data
      - Parameter completion: Result of api call
      */
-    func getPlanetsInfo(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<[Planets]>) -> Void){
+    func getPlanetsInfo(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<Planets>) -> Void){
         sendRequest(payload: payload,completion: completion)
     }
 }
