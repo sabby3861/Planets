@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate,PayLoadFormat {
         
         // Intialising Modules for our Architect
         guard let planetsViewController = self.window?.rootViewController as? PlanetsViewProtocol else { return }
-        PlanetsRouter.assembleModule(view: planetsViewController)
+        let router = PlanetsRouter()
+        router.assembleModule(view: planetsViewController)
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

@@ -41,8 +41,7 @@ protocol PlanetsOutputProtocol: AnyObject
 /// Router Protocols and assembling Module
 protocol PlanetsRouterProtocol: AnyObject
 {
-    var viewController: PlanetsViewProtocol? { get}
-    static func assembleModule(view: PlanetsViewProtocol)
+    func assembleModule(view: PlanetsViewProtocol)
 }
 
 /// APIManager Protocol

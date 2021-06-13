@@ -31,6 +31,7 @@
 		649EEA3F2651B95C00130360 /* JPStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EEA3E2651B95C00130360 /* JPStoryBoard.swift */; };
 		64A8BF1626769B820074B3FA /* JPResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1526769B820074B3FA /* JPResults.swift */; };
 		64A8BF1B26769BF90074B3FA /* JPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1A26769BF90074B3FA /* JPViewController.swift */; };
+		64A8BF202676B1B90074B3FA /* JPActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		649EEA3E2651B95C00130360 /* JPStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPStoryBoard.swift; sourceTree = "<group>"; };
 		64A8BF1526769B820074B3FA /* JPResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPResults.swift; sourceTree = "<group>"; };
 		64A8BF1A26769BF90074B3FA /* JPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPViewController.swift; sourceTree = "<group>"; };
+		64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				649EEA392651B91700130360 /* JPReusableIdentifier.swift */,
 				649EEA3E2651B95C00130360 /* JPStoryBoard.swift */,
 				64A8BF1A26769BF90074B3FA /* JPViewController.swift */,
+				64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */,
 				64991F3A263DC53E009A4DA4 /* Planets (VIPER) */,
 				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
 				64991F4B264021DE009A4DA4 /* JPPayload.swift */,
@@ -323,6 +326,7 @@
 				64991EE226389571009A4DA4 /* JPPlanets.xcdatamodeld in Sources */,
 				64991F1326389970009A4DA4 /* PlanetsPresenter.swift in Sources */,
 				64991F5426407C97009A4DA4 /* CoreDataStack.swift in Sources */,
+				64A8BF202676B1B90074B3FA /* JPActivityView.swift in Sources */,
 				64991F0E2638994A009A4DA4 /* PlanetsViewController.swift in Sources */,
 				64991F42263DC803009A4DA4 /* NetworkReachabilityManager.swift in Sources */,
 				64991F4C264021DE009A4DA4 /* JPPayload.swift in Sources */,
