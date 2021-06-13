@@ -11,7 +11,7 @@ import CoreData
 
 /**
  All query output are wrapped into this Enum
- */
+ *//*
 public enum Result<T> {
     /**
      Success Result
@@ -24,8 +24,14 @@ public enum Result<T> {
      */
     case error(Error?)
 }
+*/
 
-protocol GJContactServiceProtocol {
+enum JPError: Error {
+    case invalidRequest
+    case serviceFailure
+}
+
+protocol JPContactServiceProtocol {
     var urlSession: URLSessionProtocol {get}
 }
 
@@ -37,7 +43,7 @@ enum ReachabilityStatus {
 }
 
 ///  API manager class to handle the API calls
-class APIManager {
+class APIManager: JPContactServiceProtocol {
     /// URLSession used for query
     var urlSession: URLSessionProtocol
     /// Data Task
@@ -47,9 +53,7 @@ class APIManager {
     private(set) var reachabilityStatus: ReachabilityStatus
     /**
      Init kit
-     
-     - Parameter key: OpenWeatherMap Key
-     - Parameter urlSession: URLSession used for query
+        - Parameter urlSession: URLSession used for query
      */
     init(urlSession: URLSessionProtocol) {
         self.urlSession = urlSession
@@ -66,6 +70,7 @@ class APIManager {
      Reachability
      
      - Start the reachability
+     - To checek network status
      */
     func beginListeningNetworkReachability() {
         reachabilityManager?.listener = { status in
@@ -99,8 +104,11 @@ class APIManager {
         self.init(urlSession: URLSession.shared)
     }
     
-    
-    private func sendRequest<T: Codable>(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<T>) -> Void)  {
+    /**
+            - Send API Request
+     **/
+    private func sendRequest<T: Codable>(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<T, Error>) -> Void)  {
+        
         if let requestURL = URL(string: payload.url){
             var urlRequest = URLRequest(url: requestURL)
             guard let headers = payload.headers else {
@@ -113,44 +121,34 @@ class APIManager {
             task = urlSession.dataTask(with: urlRequest) { data, response, error in
                 guard let data = data else {
                     DispatchQueue.main.async {
-                        completion(Result.error(error))
+                        completion(.failure(error!))
                     }
                     return
                 }
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                            // try to read out a string array
-                                print(json)
-                            
-                        }
-                    
                     guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
                       fatalError("Failed to retrieve managed object context")
                     }
                     // Parse JSON data
                     var managedObjectContext: NSManagedObjectContext?
-                        let coreData = CoreDataStack()
-                        managedObjectContext = coreData.persistentContainer.viewContext
+                        managedObjectContext = CoreDataStack.shared.persistentContainer.viewContext
                     DispatchQueue.global(qos: .background).async {
                         managedObjectContext?.perform {
+                            let result: Result<T, Error>
                             let decoder = JSONDecoder()
                             decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext!
-                            
+    
                             do{
                              let contacts = try decoder.decode(T.self, from: data)
-                                completion(Result.success(contacts))
+                                result = .success(contacts)
                             }
-                            
                             catch let error {
-                                    completion(Result.error(error))
+                                result = .failure(error)
                             }
+                            completion(result)
                         }
                     }
                     
-                } catch let error {
-                    DispatchQueue.main.async {
-                        completion(Result.error(error))
-                    }
                 }
             }
             task?.resume()
@@ -168,7 +166,7 @@ extension APIManager: APIManagerProtocol {
      - Parameter id:  Payload protocol, containing payload data
      - Parameter completion: Result of api call
      */
-    func getPlanetsInfo(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<Planets>) -> Void){
+    func getPlanetsInfo(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<Planets, Error>) -> Void){
         sendRequest(payload: payload,completion: completion)
     }
 }

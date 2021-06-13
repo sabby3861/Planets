@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		648E33C92651AAA00090878B /* PlanetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E33C82651AAA00090878B /* PlanetsTableViewCell.swift */; };
 		64991ED826389571009A4DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991ED726389571009A4DA4 /* AppDelegate.swift */; };
 		64991EDA26389571009A4DA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991ED926389571009A4DA4 /* SceneDelegate.swift */; };
 		64991EDF26389571009A4DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64991EDD26389571009A4DA4 /* Main.storyboard */; };
@@ -26,6 +27,10 @@
 		64991F47263DCB86009A4DA4 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */; };
 		64991F4C264021DE009A4DA4 /* JPPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F4B264021DE009A4DA4 /* JPPayload.swift */; };
 		64991F5426407C97009A4DA4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F5326407C97009A4DA4 /* CoreDataStack.swift */; };
+		649EEA3A2651B91700130360 /* JPReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EEA392651B91700130360 /* JPReusableIdentifier.swift */; };
+		649EEA3F2651B95C00130360 /* JPStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EEA3E2651B95C00130360 /* JPStoryBoard.swift */; };
+		64A8BF1626769B820074B3FA /* JPResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1526769B820074B3FA /* JPResults.swift */; };
+		64A8BF1B26769BF90074B3FA /* JPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1A26769BF90074B3FA /* JPViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		648E33C82651AAA00090878B /* PlanetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTableViewCell.swift; sourceTree = "<group>"; };
 		64991ED426389571009A4DA4 /* JPPlanets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPPlanets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64991ED726389571009A4DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64991ED926389571009A4DA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,10 @@
 		64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		64991F4B264021DE009A4DA4 /* JPPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPPayload.swift; sourceTree = "<group>"; };
 		64991F5326407C97009A4DA4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		649EEA392651B91700130360 /* JPReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPReusableIdentifier.swift; sourceTree = "<group>"; };
+		649EEA3E2651B95C00130360 /* JPStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPStoryBoard.swift; sourceTree = "<group>"; };
+		64A8BF1526769B820074B3FA /* JPResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPResults.swift; sourceTree = "<group>"; };
+		64A8BF1A26769BF90074B3FA /* JPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,9 @@
 			children = (
 				64991ED726389571009A4DA4 /* AppDelegate.swift */,
 				64991ED926389571009A4DA4 /* SceneDelegate.swift */,
+				649EEA392651B91700130360 /* JPReusableIdentifier.swift */,
+				649EEA3E2651B95C00130360 /* JPStoryBoard.swift */,
+				64A8BF1A26769BF90074B3FA /* JPViewController.swift */,
 				64991F3A263DC53E009A4DA4 /* Planets (VIPER) */,
 				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
 				64991F4B264021DE009A4DA4 /* JPPayload.swift */,
@@ -165,6 +178,8 @@
 				64991F1C26389994009A4DA4 /* PlanetsRouter.swift */,
 				64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */,
 				64991F26263899AA009A4DA4 /* Planets.swift */,
+				64A8BF1526769B820074B3FA /* JPResults.swift */,
+				648E33C82651AAA00090878B /* PlanetsTableViewCell.swift */,
 			);
 			path = "Planets (VIPER)";
 			sourceTree = "<group>";
@@ -304,14 +319,19 @@
 				64991ED826389571009A4DA4 /* AppDelegate.swift in Sources */,
 				64991F2F26389B4B009A4DA4 /* APIManager.swift in Sources */,
 				64991EDA26389571009A4DA4 /* SceneDelegate.swift in Sources */,
+				649EEA3A2651B91700130360 /* JPReusableIdentifier.swift in Sources */,
 				64991EE226389571009A4DA4 /* JPPlanets.xcdatamodeld in Sources */,
 				64991F1326389970009A4DA4 /* PlanetsPresenter.swift in Sources */,
 				64991F5426407C97009A4DA4 /* CoreDataStack.swift in Sources */,
 				64991F0E2638994A009A4DA4 /* PlanetsViewController.swift in Sources */,
 				64991F42263DC803009A4DA4 /* NetworkReachabilityManager.swift in Sources */,
 				64991F4C264021DE009A4DA4 /* JPPayload.swift in Sources */,
+				649EEA3F2651B95C00130360 /* JPStoryBoard.swift in Sources */,
+				648E33C92651AAA00090878B /* PlanetsTableViewCell.swift in Sources */,
+				64A8BF1626769B820074B3FA /* JPResults.swift in Sources */,
 				64991F22263899A1009A4DA4 /* PlanetsProtocols.swift in Sources */,
 				64991F1D26389994009A4DA4 /* PlanetsRouter.swift in Sources */,
+				64A8BF1B26769BF90074B3FA /* JPViewController.swift in Sources */,
 				64991F1826389986009A4DA4 /* PlanetsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

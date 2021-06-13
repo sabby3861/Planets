@@ -11,15 +11,7 @@ import CoreData
 class CoreDataStack {
     let moduleName = "JPPlanets"
 
-    func saveToMainContext() { // Just a helper method for removing boilerplate code when you want to save. Remember this will be done on the main thread if called.
-        if objectContext.hasChanges {
-            do {
-                try objectContext.save()
-            } catch {
-                print("Error saving main ManagedObjectContext: \(error)")
-            }
-        }
-        
+    func saveToMainContext() { // Just a helper method for removing boilerplate code when you want to save. Remember this will be
         if persistentContainer.viewContext.hasChanges {
             do {
                 try persistentContainer.viewContext.save()
@@ -28,56 +20,12 @@ class CoreDataStack {
             }
         }
     }
-
-    func fetchFromStorage<Object: NSManagedObject>(name: Object) -> [Object]?{
-        let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<Object>(entityName: name.description)
-        do {
-          let contacts = try managedObjectContext.fetch(fetchRequest)
-          guard contacts.count > 0 else {
-            return nil
-          }
-          return contacts
-        } catch let error {
-          print(error)
-          return nil
-        }
-    }
-    
-    lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: moduleName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
-
-    lazy var applicationDocumentsDirectory: URL = {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-    }()
-
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-
-        let persistenStoreURL = self.applicationDocumentsDirectory.appendingPathComponent("\(moduleName).sqlite")
-
-        do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: persistenStoreURL, options: [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption : true])
-        } catch {
-            fatalError("Persistent Store error: \(error)")
-        }
-        return coordinator
-    }()
-
-    lazy var objectContext: NSManagedObjectContext = {
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType) // As stated in the documentation change this depending on your need, but i recommend sticking to main thread if possible.
-
-        context.persistentStoreCoordinator = self.persistentStoreCoordinator
-        return context
-    }()
-    
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: moduleName)
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
@@ -85,5 +33,41 @@ class CoreDataStack {
         return container
     }()
 
+    static var shared = CoreDataStack()
+}
+
+extension CoreDataStack: StorageManager{
+    func fetchFromCoreData<Storable: NSManagedObject>(name: Storable.Type) -> [Storable]?{
+        let managedObjectContext = persistentContainer.viewContext
+        let entityName = String(describing: name)
+        let fetchRequest = NSFetchRequest<Storable>(entityName: entityName)
+        do {
+          let result = try managedObjectContext.fetch(fetchRequest)
+          guard result.count > 0 else {
+            return nil
+          }
+          return result
+        } catch let error {
+          print(error)
+          return nil
+        }
+    }
     
+    func save(object: Storable) {
+        do {
+          let managedObjectContext = persistentContainer.viewContext
+          try managedObjectContext.save()
+        }
+        catch let error {
+          print("unable to save context \(error)")
+        }
+    }
+}
+protocol Storable { }
+extension NSManagedObject: Storable { } // Core Data Database
+protocol StorageManager {
+    /// Save Object into Core database
+    /// - Parameter object: NSManagedObject (as Storable)
+    func save(object: Storable)
+    func fetchFromCoreData<Storable: NSManagedObject>(name: Storable.Type) -> [Storable]?
 }

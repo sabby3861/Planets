@@ -6,47 +6,51 @@
 //
 
 import Foundation
+import UIKit
 
-protocol PlanetsViewProtocol: class
+/// View Protocol
+protocol PlanetsViewProtocol: JPViewErroProtocol, AnyObject
 {
-    var presenter: PlanetsPresenterProtocol? { get }
-    func showPlanetsInformation(with info: [Planets]?)
-    func showError(with message: String)
-    var dataSource: [Planets]? {get set}
-    
+    var presenter: PlanetsPresenterProtocol? { get set}
+    var tableView: UITableView!{get set}
 }
 
 /// View -> Interactor and View -> Router Communication Protocols
-protocol PlanetsPresenterProtocol: class
+protocol PlanetsPresenterProtocol: AnyObject
 {
     var view: PlanetsViewProtocol? { get }
-    var router: PlanetsRouterProtocol? { get }
     var interactor: PlanetsInteractorProtocol?{get}
+    var result: [JPResult]? {get}
     func fetchPlanetsInformation()
 }
 
 /// Interactor -> Presenter Communication Protocols
-protocol PlanetsInteractorProtocol: class
+protocol PlanetsInteractorProtocol: AnyObject
 {
     var output: PlanetsOutputProtocol? { get }
     func decodeJSONInformation()
 }
 
-protocol PlanetsOutputProtocol: class
+/// Interactor to Presenter Output Protocol
+protocol PlanetsOutputProtocol: AnyObject
 {
-    func planetsInfoDidFetch(citiesInfo: [Planets]?)
+    func planetsInfoDidFetch(result: Set<Results>)
     func errorOccured(message: String)
 }
 
 /// Router Protocols and assembling Module
-protocol PlanetsRouterProtocol: class
+protocol PlanetsRouterProtocol: AnyObject
 {
-    var viewController: PlanetsViewController? { get}
-    static func assembleModule(view: PlanetsViewController)
-    func showMapView(cityInfo: Planets)
+    var viewController: PlanetsViewProtocol? { get}
+    static func assembleModule(view: PlanetsViewProtocol)
 }
 
-
+/// APIManager Protocol
 protocol APIManagerProtocol {
-    func getPlanetsInfo(payload: JPHTTPPayloadProtocol,completion: @escaping (Result<Planets>) -> Void)
+    func getPlanetsInfo(payload: JPHTTPPayloadProtocol,completion: @escaping (Result<Planets, Error>) -> Void)
+}
+
+/// Protocol for error message Alert
+protocol JPViewErroProtocol {
+    func showError(_ title: String, message: String)
 }
