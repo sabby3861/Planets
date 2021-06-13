@@ -8,7 +8,7 @@
 import Foundation
 
 final class PlanetsRouter: PlanetsRouterProtocol {
-    
+    /// Assemble the VIPER modules here
      func assembleModule(view: PlanetsViewProtocol) {
         let presenter = PlanetsPresenter()
         let interactor = PlanetsInteractor()

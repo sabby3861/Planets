@@ -25,9 +25,7 @@ class PlanetsTableViewCell: UITableViewCell {
     ///
     /// - Parameter data: Results containing all info
     func displayData(data: JPResult) {
-
         nameLabel.text = data.planetName
-
     }
 }
 

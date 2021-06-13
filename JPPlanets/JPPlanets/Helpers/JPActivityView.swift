@@ -92,7 +92,7 @@ class JPAlertViewController {
             let action =  UIAlertAction(title: button, style: .default, handler: { (alertAction) in
                 
                 if let d = delegate{
-                    d.alert(buttonClickedIndex: index, buttonTitle: alertAction.title != nil ? alertAction.title! : "GoJek", tag: tag)
+                    d.alert(buttonClickedIndex: index, buttonTitle: alertAction.title != nil ? alertAction.title! : title, tag: tag)
                 }
             })
             alert.addAction(action)

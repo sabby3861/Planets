@@ -7,16 +7,20 @@
 
 import Foundation
 import CoreData
-
+// MARK: - Core Data stack
 class CoreDataStack {
     let moduleName = "JPPlanets"
 
     func saveToMainContext() { // Just a helper method for removing boilerplate code when you want to save. Remember this will be
-        if persistentContainer.viewContext.hasChanges {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
             do {
-                try persistentContainer.viewContext.save()
+                try context.save()
             } catch {
-                print("Error saving main ManagedObjectContext: \(error)")
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }

@@ -21,7 +21,7 @@ class PlanetsInteractor: PlanetsInteractorProtocol, PayLoadFormat {
         }
         self.output?.planetsInfoDidFetch(result: data.first?.results ?? [])
     }
-    
+    /// Function to fetch data from the API
     func startDownloadingPlanetsInfo(coreData: CoreDataStack)  {
         let payload = formatGetPayload(url: .planetsUrl, type: .requestMethodGET)
         let service = APIManager()
