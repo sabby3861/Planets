@@ -10,16 +10,13 @@ import XCTest
 
 class JPPlanetsTests: XCTestCase, PayLoadFormat {
 
-    var presenter: PlanetsPresenterProtocol!
-        var interactor: PlanetsInteractor!
-        var router: TestPlanetsRouter!
+    var router: TestPlanetsRouter!
     var service: APIManagerProtocol!
     var view: PlanetsViewProtocol!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         router = TestPlanetsRouter()
-        presenter = PlanetsPresenter()
         service = APIManager()
         view = PlanetsViewController()
     }
@@ -27,7 +24,6 @@ class JPPlanetsTests: XCTestCase, PayLoadFormat {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         router = nil
-        presenter = nil
         service = nil
         view = nil
     }

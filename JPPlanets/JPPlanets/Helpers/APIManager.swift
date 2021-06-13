@@ -9,29 +9,8 @@ import Foundation
 import UIKit
 import CoreData
 
-/**
- All query output are wrapped into this Enum
- *//*
-public enum Result<T> {
-    /**
-     Success Result
-     - Parameter T: T can be Weather of Forecast struct
-     */
-    case success(T)
-    /**
-     Error case
-     - Parameter Error?: error can be nil when error are unknown
-     */
-    case error(Error?)
-}
-*/
 
-enum JPError: Error {
-    case invalidRequest
-    case serviceFailure
-}
-
-protocol JPContactServiceProtocol {
+protocol JPAPIServiceProtocol {
     var urlSession: URLSessionProtocol {get}
 }
 
@@ -43,7 +22,7 @@ enum ReachabilityStatus {
 }
 
 ///  API manager class to handle the API calls
-class APIManager: JPContactServiceProtocol {
+class APIManager: JPAPIServiceProtocol {
     /// URLSession used for query
     var urlSession: URLSessionProtocol
     /// Data Task
