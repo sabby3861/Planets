@@ -11,9 +11,11 @@ class PlanetsViewController: UIViewController, PlanetsViewProtocol {
         
     @IBOutlet weak var tableView: UITableView!
     var presenter: PlanetsPresenterProtocol?
- 
+    internal lazy var activity = JPActivityView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activity.showActivityIndicatory(view: self.view, activityTitle)
         presenter?.fetchPlanetsInformation()
         // Do any additional setup after loading the view.
     }

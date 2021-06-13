@@ -29,16 +29,16 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-Cp-49v">
                                                     <rect key="frame" x="5" y="5" width="404" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Rhe-Cp-49v" secondAttribute="bottom" constant="5" id="4yN-tU-QJn"/>
-                                                <constraint firstItem="Rhe-Cp-49v" firstAttribute="top" secondItem="Vmx-FQ-rFO" secondAttribute="top" constant="5" id="Htb-h3-R55"/>
-                                                <constraint firstItem="Rhe-Cp-49v" firstAttribute="leading" secondItem="Vmx-FQ-rFO" secondAttribute="leading" constant="5" id="NyB-Kx-nzv"/>
-                                                <constraint firstAttribute="trailing" secondItem="Rhe-Cp-49v" secondAttribute="trailing" constant="5" id="wd5-aQ-uPu"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rhe-Cp-49v" secondAttribute="bottom" constant="15" id="4yN-tU-QJn"/>
+                                                <constraint firstItem="Rhe-Cp-49v" firstAttribute="top" secondItem="Vmx-FQ-rFO" secondAttribute="top" constant="15" id="Htb-h3-R55"/>
+                                                <constraint firstItem="Rhe-Cp-49v" firstAttribute="leading" secondItem="Vmx-FQ-rFO" secondAttribute="leading" constant="15" id="NyB-Kx-nzv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rhe-Cp-49v" secondAttribute="trailing" constant="15" id="wd5-aQ-uPu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

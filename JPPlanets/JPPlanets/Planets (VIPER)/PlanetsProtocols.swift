@@ -13,6 +13,7 @@ protocol PlanetsViewProtocol: JPViewErroProtocol, AnyObject
 {
     var presenter: PlanetsPresenterProtocol? { get set}
     var tableView: UITableView!{get set}
+    var activity: JPActivityView {get set}
 }
 
 /// View -> Interactor and View -> Router Communication Protocols

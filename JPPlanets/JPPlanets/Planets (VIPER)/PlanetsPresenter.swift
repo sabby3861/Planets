@@ -24,6 +24,7 @@ extension PlanetsPresenter: PlanetsOutputProtocol {
     func planetsInfoDidFetch(result: Set<Results>) {
         mapToStructure(managedObject: result)
         view?.tableView.reloadData()
+        view?.activity.removeActivity()
     }
     /// Function to show the error Alert
     func errorOccured(message: String) {

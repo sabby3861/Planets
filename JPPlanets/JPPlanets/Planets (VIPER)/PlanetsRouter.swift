@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlanetsRouter: PlanetsRouterProtocol {
+final class PlanetsRouter: PlanetsRouterProtocol {
     
      func assembleModule(view: PlanetsViewProtocol) {
         let presenter = PlanetsPresenter()
