@@ -135,16 +135,8 @@
 			children = (
 				64991ED726389571009A4DA4 /* AppDelegate.swift */,
 				64991ED926389571009A4DA4 /* SceneDelegate.swift */,
-				649EEA392651B91700130360 /* JPReusableIdentifier.swift */,
-				649EEA3E2651B95C00130360 /* JPStoryBoard.swift */,
-				64A8BF1A26769BF90074B3FA /* JPViewController.swift */,
-				64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */,
+				64A8BF262676C4FE0074B3FA /* Helpers */,
 				64991F3A263DC53E009A4DA4 /* Planets (VIPER) */,
-				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
-				64991F4B264021DE009A4DA4 /* JPPayload.swift */,
-				64991F5326407C97009A4DA4 /* CoreDataStack.swift */,
-				64991F41263DC803009A4DA4 /* NetworkReachabilityManager.swift */,
-				64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */,
 				64991EDD26389571009A4DA4 /* Main.storyboard */,
 				64991EE326389572009A4DA4 /* Assets.xcassets */,
 				64991EE526389572009A4DA4 /* LaunchScreen.storyboard */,
@@ -185,6 +177,22 @@
 				648E33C82651AAA00090878B /* PlanetsTableViewCell.swift */,
 			);
 			path = "Planets (VIPER)";
+			sourceTree = "<group>";
+		};
+		64A8BF262676C4FE0074B3FA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				649EEA392651B91700130360 /* JPReusableIdentifier.swift */,
+				649EEA3E2651B95C00130360 /* JPStoryBoard.swift */,
+				64A8BF1A26769BF90074B3FA /* JPViewController.swift */,
+				64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */,
+				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
+				64991F4B264021DE009A4DA4 /* JPPayload.swift */,
+				64991F5326407C97009A4DA4 /* CoreDataStack.swift */,
+				64991F41263DC803009A4DA4 /* NetworkReachabilityManager.swift */,
+				64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

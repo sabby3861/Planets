@@ -20,3 +20,4 @@ extension JPReusableIdentifier {
 /// Constants to use
 let title = "Planets"
 let genericError = "Something wrong happened, please try later"
+let activityTitle = "Fetching Planets Info"
