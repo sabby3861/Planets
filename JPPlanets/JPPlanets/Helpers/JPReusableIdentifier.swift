@@ -20,4 +20,5 @@ extension JPReusableIdentifier {
 /// Constants to use
 let title = "Planets"
 let genericError = "Something wrong happened, please try later"
+let networkError = "Your network seems to be down, please check your connection and try again"
 let activityTitle = "Fetching Planets Info"

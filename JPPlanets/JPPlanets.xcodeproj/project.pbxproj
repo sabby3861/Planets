@@ -29,7 +29,6 @@
 		649EEA3A2651B91700130360 /* JPReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EEA392651B91700130360 /* JPReusableIdentifier.swift */; };
 		649EEA3F2651B95C00130360 /* JPStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EEA3E2651B95C00130360 /* JPStoryBoard.swift */; };
 		64A8BF1626769B820074B3FA /* JPResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1526769B820074B3FA /* JPResults.swift */; };
-		64A8BF1B26769BF90074B3FA /* JPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1A26769BF90074B3FA /* JPViewController.swift */; };
 		64A8BF202676B1B90074B3FA /* JPActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */; };
 		64A8BF2D2676C5E80074B3FA /* JPPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64991F4B264021DE009A4DA4 /* JPPayload.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 		649EEA392651B91700130360 /* JPReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPReusableIdentifier.swift; sourceTree = "<group>"; };
 		649EEA3E2651B95C00130360 /* JPStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPStoryBoard.swift; sourceTree = "<group>"; };
 		64A8BF1526769B820074B3FA /* JPResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPResults.swift; sourceTree = "<group>"; };
-		64A8BF1A26769BF90074B3FA /* JPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPViewController.swift; sourceTree = "<group>"; };
 		64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,7 +182,6 @@
 			children = (
 				649EEA392651B91700130360 /* JPReusableIdentifier.swift */,
 				649EEA3E2651B95C00130360 /* JPStoryBoard.swift */,
-				64A8BF1A26769BF90074B3FA /* JPViewController.swift */,
 				64A8BF1F2676B1B90074B3FA /* JPActivityView.swift */,
 				64991F2E26389B4B009A4DA4 /* APIManager.swift */,
 				64991F4B264021DE009A4DA4 /* JPPayload.swift */,
@@ -343,7 +340,6 @@
 				64A8BF1626769B820074B3FA /* JPResults.swift in Sources */,
 				64991F22263899A1009A4DA4 /* PlanetsProtocols.swift in Sources */,
 				64991F1D26389994009A4DA4 /* PlanetsRouter.swift in Sources */,
-				64A8BF1B26769BF90074B3FA /* JPViewController.swift in Sources */,
 				64991F1826389986009A4DA4 /* PlanetsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

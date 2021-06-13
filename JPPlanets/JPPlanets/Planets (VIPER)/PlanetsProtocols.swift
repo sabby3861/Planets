@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// View Protocol
-protocol PlanetsViewProtocol: JPViewErroProtocol, AnyObject
+protocol PlanetsViewProtocol: AnyObject
 {
     var presenter: PlanetsPresenterProtocol? { get set}
     var tableView: UITableView!{get set}
@@ -48,9 +48,4 @@ protocol PlanetsRouterProtocol: AnyObject
 /// APIManager Protocol
 protocol APIManagerProtocol {
     func getPlanetsInfo(payload: JPHTTPPayloadProtocol,completion: @escaping (Result<Planets, Error>) -> Void)
-}
-
-/// Protocol for error message Alert
-protocol JPViewErroProtocol {
-    func showError(_ title: String, message: String)
 }

@@ -2,13 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Planets" representedClassName=".Planets" syncable="YES">
         <attribute name="next" optional="YES" attributeType="String"/>
-        <relationship name="results" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Results"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Results" inverseName="planets" inverseEntity="Results"/>
     </entity>
     <entity name="Results" representedClassName=".Results" syncable="YES">
         <attribute name="planetName" optional="YES" attributeType="String"/>
+        <relationship name="planets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planets" inverseName="results" inverseEntity="Planets"/>
     </entity>
     <elements>
         <element name="Planets" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Results" positionX="-54" positionY="9" width="128" height="58"/>
+        <element name="Results" positionX="-54" positionY="9" width="128" height="73"/>
     </elements>
 </model>

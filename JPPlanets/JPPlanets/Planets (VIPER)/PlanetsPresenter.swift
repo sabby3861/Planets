@@ -28,7 +28,7 @@ extension PlanetsPresenter: PlanetsOutputProtocol {
     }
     /// Function to show the error Alert
     func errorOccured(message: String) {
-        view?.showError(title, message: message)
+        JPAlertViewController.showAlert(withTitle: title, message: message)
     }
     
     /**

@@ -70,7 +70,7 @@ class APIManager: JPAPIServiceProtocol {
     func showErrorForNoNetwork()  {
         task?.suspend()
         DispatchQueue.main.async {
-            
+            JPAlertViewController.showAlert(withTitle: title, message: networkError)
         }
     }
     
