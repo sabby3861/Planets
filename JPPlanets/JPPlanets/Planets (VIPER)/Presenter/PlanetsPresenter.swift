@@ -32,7 +32,7 @@ extension PlanetsPresenter: PlanetsOutputProtocol {
     }
     
     /**
-            Mapping NSManaged Object to Structure
+     Mapping NSManaged Object to Structure
      Avoid using managed objects directly, instead used a stucture
      */
     func mapToStructure(managedObject: Set<Results>?) {

@@ -10,7 +10,7 @@ import CoreData
 // MARK: - Core Data stack
 class CoreDataStack {
     let moduleName = "JPPlanets"
-
+    
     func saveToMainContext() { // Just a helper method for removing boilerplate code when you want to save. Remember this will be
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -36,7 +36,7 @@ class CoreDataStack {
         })
         return container
     }()
-
+    
     static var shared = CoreDataStack()
 }
 
@@ -47,14 +47,14 @@ extension CoreDataStack: StorageManager{
         let entityName = String(describing: name)
         let fetchRequest = NSFetchRequest<Storable>(entityName: entityName)
         do {
-          let result = try managedObjectContext.fetch(fetchRequest)
-          guard result.count > 0 else {
-            return nil
-          }
-          return result
+            let result = try managedObjectContext.fetch(fetchRequest)
+            guard result.count > 0 else {
+                return nil
+            }
+            return result
         } catch let error {
-          print(error)
-          return nil
+            print(error)
+            return nil
         }
     }
 }

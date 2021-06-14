@@ -8,19 +8,19 @@
 import UIKit
 
 class PlanetsTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
     /// Display data on table view cell
     ///
     /// - Parameter data: Results containing all info

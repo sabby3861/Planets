@@ -17,7 +17,7 @@ class PlanetsInteractor: PlanetsInteractorProtocol, PayLoadFormat {
         let corData = CoreDataStack.shared
         guard let data = corData.fetchFromCoreData(name: Planets.self) else {
             startDownloadingPlanetsInfo(coreData: corData)
-          return
+            return
         }
         self.output?.planetsInfoDidFetch(result: data.first?.results ?? [])
     }
@@ -31,7 +31,7 @@ class PlanetsInteractor: PlanetsInteractorProtocol, PayLoadFormat {
                 coreData.saveToMainContext()
                 guard let planets = coreData.fetchFromCoreData(name: Planets.self) else { return  }
                 self.output?.planetsInfoDidFetch(result: planets.first?.results ?? [])
-        
+                
             case .failure(let error):
                 self.output?.errorOccured(message: error.localizedDescription)
             }

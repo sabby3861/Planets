@@ -9,44 +9,44 @@ import Foundation
 import CoreData
 /// Contact info
 class Planets : NSManagedObject, Codable {
-  enum CodingKeys: String, CodingKey {
-    case results = "results"
-    case next = "next"
-  }
-  
-  // MARK: - Core Data Managed Object
-  @NSManaged var next: String?
-  @NSManaged var results: Set<Results>?
-  
-  // MARK: - Decodable
-  required convenience init(from decoder: Decoder) throws {
-    guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
-      let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-      let entity = NSEntityDescription.entity(forEntityName: JPCoreData.planet.rawValue, in: managedObjectContext) else {
-        fatalError("Failed to decode User")
+    enum CodingKeys: String, CodingKey {
+        case results = "results"
+        case next = "next"
     }
     
-    self.init(entity: entity, insertInto: managedObjectContext)
+    // MARK: - Core Data Managed Object
+    @NSManaged var next: String?
+    @NSManaged var results: Set<Results>?
     
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-    self.next = try container.decodeIfPresent(String.self, forKey: .next)
-    self.results = try container.decodeIfPresent(Set<Results>.self, forKey: .results)
-  }
-  
-  // MARK: - Encodable
-  public func encode(to encoder: Encoder) throws {
-    var container = encoder.container(keyedBy: CodingKeys.self)    
-    try container.encode(next, forKey: .next)
-    try container.encode(results, forKey: .results)
-  }
-  
+    // MARK: - Decodable
+    required convenience init(from decoder: Decoder) throws {
+        guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
+              let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
+              let entity = NSEntityDescription.entity(forEntityName: JPCoreData.planet.rawValue, in: managedObjectContext) else {
+            fatalError("Failed to decode User")
+        }
+        
+        self.init(entity: entity, insertInto: managedObjectContext)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.next = try container.decodeIfPresent(String.self, forKey: .next)
+        self.results = try container.decodeIfPresent(Set<Results>.self, forKey: .results)
+    }
+    
+    // MARK: - Encodable
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)    
+        try container.encode(next, forKey: .next)
+        try container.encode(results, forKey: .results)
+    }
+    
 }
 
 /// Get all the results of Planets
 class Results : NSManagedObject, Codable {
     
     enum CodingKeys: String, CodingKey {
-      case planetName = "name"
+        case planetName = "name"
     }
     
     // MARK: - Core Data Managed Object
@@ -54,28 +54,28 @@ class Results : NSManagedObject, Codable {
     
     // MARK: - Decodable
     required convenience init(from decoder: Decoder) throws {
-      guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
-        let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-        let entity = NSEntityDescription.entity(forEntityName: JPCoreData.results.rawValue, in: managedObjectContext) else {
-          fatalError("Failed to decode User")
-      }
-      
-      self.init(entity: entity, insertInto: managedObjectContext)
-      
-      let container = try decoder.container(keyedBy: CodingKeys.self)
-      self.planetName = try container.decodeIfPresent(String.self, forKey: .planetName)
+        guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
+              let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
+              let entity = NSEntityDescription.entity(forEntityName: JPCoreData.results.rawValue, in: managedObjectContext) else {
+            fatalError("Failed to decode User")
+        }
+        
+        self.init(entity: entity, insertInto: managedObjectContext)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.planetName = try container.decodeIfPresent(String.self, forKey: .planetName)
     }
     
     // MARK: - Encodable
     public func encode(to encoder: Encoder) throws {
-      var container = encoder.container(keyedBy: CodingKeys.self)
-      try container.encode(planetName, forKey: .planetName)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(planetName, forKey: .planetName)
     }
 }
 
 public extension CodingUserInfoKey {
-  // Helper property to retrieve the Core Data managed object context
-  static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")
+    // Helper property to retrieve the Core Data managed object context
+    static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")
 }
 
 enum JPCoreData: String {

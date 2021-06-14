@@ -32,7 +32,7 @@ class APIManager: JPAPIServiceProtocol {
     private(set) var reachabilityStatus: ReachabilityStatus
     /**
      Init kit
-        - Parameter urlSession: URLSession used for query
+     - Parameter urlSession: URLSession used for query
      */
     init(urlSession: URLSessionProtocol) {
         self.urlSession = urlSession
@@ -84,7 +84,7 @@ class APIManager: JPAPIServiceProtocol {
     }
     
     /**
-            - Send API Request
+     - Send API Request
      **/
     private func sendRequest<T: Codable>(payload: JPHTTPPayloadProtocol, completion: @escaping (Result<T, Error>) -> Void)  {
         
@@ -106,19 +106,19 @@ class APIManager: JPAPIServiceProtocol {
                 }
                 do {
                     guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
-                      fatalError("Failed to retrieve managed object context")
+                        fatalError("Failed to retrieve managed object context")
                     }
                     // Parse JSON data
                     var managedObjectContext: NSManagedObjectContext?
-                        managedObjectContext = CoreDataStack.shared.persistentContainer.viewContext
+                    managedObjectContext = CoreDataStack.shared.persistentContainer.viewContext
                     DispatchQueue.global(qos: .background).async {
                         managedObjectContext?.perform {
                             let result: Result<T, Error>
                             let decoder = JSONDecoder()
                             decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext!
-    
+                            
                             do{
-                             let contacts = try decoder.decode(T.self, from: data)
+                                let contacts = try decoder.decode(T.self, from: data)
                                 result = .success(contacts)
                             }
                             catch let error {
