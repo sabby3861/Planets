@@ -24,7 +24,7 @@ extension UIStoryboard {
   
   func instantiateVieController<T>() -> T where T: JPStoryboardIdentifiable {
     guard let viewController = self.instantiateViewController(withIdentifier: T.storyboardIdentifier) as? T else {
-      fatalError("Couldn't instantiate view controller with identifier \(T.storyboardIdentifier) ")
+      fatalError("\(storyboardError) \(T.storyboardIdentifier) ")
     }
     return viewController
   }
