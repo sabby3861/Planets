@@ -41,6 +41,7 @@ class CoreDataStack {
 }
 
 extension CoreDataStack: StorageManager{
+    /// Generic function to fetch from Core data
     func fetchFromCoreData<Storable: NSManagedObject>(name: Storable.Type) -> [Storable]?{
         let managedObjectContext = persistentContainer.viewContext
         let entityName = String(describing: name)
@@ -56,22 +57,11 @@ extension CoreDataStack: StorageManager{
           return nil
         }
     }
-    
-    func save(object: Storable) {
-        do {
-          let managedObjectContext = persistentContainer.viewContext
-          try managedObjectContext.save()
-        }
-        catch let error {
-          print("unable to save context \(error)")
-        }
-    }
 }
 protocol Storable { }
 extension NSManagedObject: Storable { } // Core Data Database
 protocol StorageManager {
     /// Save Object into Core database
-    /// - Parameter object: NSManagedObject (as Storable)
-    func save(object: Storable)
+    func saveToMainContext()
     func fetchFromCoreData<Storable: NSManagedObject>(name: Storable.Type) -> [Storable]?
 }
