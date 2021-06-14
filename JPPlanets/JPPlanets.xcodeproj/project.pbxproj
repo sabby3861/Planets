@@ -168,14 +168,12 @@
 		64991F3A263DC53E009A4DA4 /* Planets (VIPER) */ = {
 			isa = PBXGroup;
 			children = (
-				64991F0D2638994A009A4DA4 /* PlanetsViewController.swift */,
-				64991F1226389970009A4DA4 /* PlanetsPresenter.swift */,
-				64991F1726389986009A4DA4 /* PlanetsInteractor.swift */,
-				64991F1C26389994009A4DA4 /* PlanetsRouter.swift */,
-				64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */,
-				64991F26263899AA009A4DA4 /* Planets.swift */,
-				64A8BF1526769B820074B3FA /* JPResults.swift */,
-				648E33C82651AAA00090878B /* PlanetsTableViewCell.swift */,
+				64A8BF482676D4B70074B3FA /* View */,
+				64A8BF4F2676D4C10074B3FA /* Interactor */,
+				64A8BF562676D4CE0074B3FA /* Presenter */,
+				64A8BF5E2676D4E60074B3FA /* Entity */,
+				64A8BF5A2676D4DA0074B3FA /* Router */,
+				64A8BF622676D4F10074B3FA /* Protocols */,
 			);
 			path = "Planets (VIPER)";
 			sourceTree = "<group>";
@@ -193,6 +191,56 @@
 				64991F46263DCB86009A4DA4 /* URLSessionProtocol.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		64A8BF482676D4B70074B3FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64991F0D2638994A009A4DA4 /* PlanetsViewController.swift */,
+				648E33C82651AAA00090878B /* PlanetsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64A8BF4F2676D4C10074B3FA /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				64991F1726389986009A4DA4 /* PlanetsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		64A8BF562676D4CE0074B3FA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				64991F1226389970009A4DA4 /* PlanetsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		64A8BF5A2676D4DA0074B3FA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				64991F1C26389994009A4DA4 /* PlanetsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		64A8BF5E2676D4E60074B3FA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				64991F26263899AA009A4DA4 /* Planets.swift */,
+				64A8BF1526769B820074B3FA /* JPResults.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		64A8BF622676D4F10074B3FA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				64991F21263899A1009A4DA4 /* PlanetsProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
